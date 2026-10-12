@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Verification</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Signature Detection and Verification Process</h1>
+        <form action="/verify" method="POST" enctype="multipart/form-data" class="form-container">
+            <div class="form-group">
+                <label for="reference">Upload Reference Signature Image:</label>
+                <input type="file" name="reference" id="reference" required>
+            </div>
+            <div class="form-group">
+                <label for="signatures">Upload Signature Images:</label>
+                <input type="file" name="signatures" id="signatures" multiple required>
+            </div>
+            <button type="submit" class="btn">Verify Signature</button>
+        </form>
+        <hr>
+        
+    </div>
+</body>
+</html>
