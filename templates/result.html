@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Result</title>
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Signature Verification Result</h1>
+        <div class="result-section">
+            <h2>Result: {{ result }}</h2>
+            {% if best_match %}
+            <div class="best-match">
+                <h3>Best Match:</h3>
+                <img src="{{ url_for('static', filename=best_match.split('static/')[1]) }}" alt="Best Match">
+            </div>
+            {% endif %}
+        </div>
+        <a href="{{ url_for('home') }}">Go Back to Home</a>
+    </div>
+</body>
+</html>
